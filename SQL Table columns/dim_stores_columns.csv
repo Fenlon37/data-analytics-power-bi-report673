@@ -1,0 +1,13 @@
+﻿column_name,data_type
+country,text
+country_code,text
+country_region,text
+date_opened,text
+geography,text
+latitude,double precision
+longitude,double precision
+region,text
+staff_numbers,bigint
+store_code,text
+store_type,text
+world_region,text

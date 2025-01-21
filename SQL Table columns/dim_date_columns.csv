@@ -1,0 +1,11 @@
+﻿column_name,data_type
+date,text
+day_of_week,character varying
+month_name,character varying
+month_number,bigint
+quarter,bigint
+start_of_month,text
+start_of_quarter,text
+start_of_week,text
+start_of_year,text
+year,bigint

@@ -1,0 +1,5 @@
+﻿column_name,data_type
+count_of_orders,bigint
+percentage_of_total_sales,double precision
+store_type,text
+total_sales,double precision

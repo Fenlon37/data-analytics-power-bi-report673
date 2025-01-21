@@ -1,0 +1,11 @@
+﻿column_name,data_type
+address,text
+company,text
+country,text
+country_code,text
+customer_id,text
+date_of_birth,text
+email,text
+full_name,text
+join_date,text
+telephone,text

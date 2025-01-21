@@ -1,0 +1,3 @@
+﻿column_name,data_type
+highest_revenue_month,text
+total_revenue,integer

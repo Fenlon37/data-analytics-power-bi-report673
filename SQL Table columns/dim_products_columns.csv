@@ -1,0 +1,11 @@
+﻿data_type,column_name
+double precision,cost_price
+double precision,ean
+double precision,sale_price
+double precision,weight
+text,availability
+text,category
+text,date_added
+text,description
+text,product_code
+text,product_uuid

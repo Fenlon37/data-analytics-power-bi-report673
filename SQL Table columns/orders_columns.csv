@@ -1,0 +1,11 @@
+﻿column_name,data_type
+card_number,bigint
+customer_id,text
+index,bigint
+order_date,text
+order_time,text
+product_code,text
+product_quantity,bigint
+shipping_date,text
+shipping_time,text
+store_code,text
