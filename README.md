@@ -109,7 +109,7 @@ Initially a thin rectangle to reflect the navigation sidebar was added to the le
 - Table added to show the top 10 products (SC51).
 - Scatter plot to show the profitability (SC52) and sales volume across each product category (SC53).
 - Slicers added to enable filtering of the selection by product category and country, with a bookmark-enabled toolbar. This was done through the insertion of a custom filter button (SC54, SC55) and the creation of a larger rectangle shape over the navigation pane. Then after altering the selection pane (SC56), a vertical list slicer was created (SC57), and named appropriately (SC58), with multi-select and select-all enabled (SC59). Slicer Bar Closed and Open states have been defined based on whether the slicers were visible or not, with the data being unticked (SC60) and each bookmark state being given an action to open or close the slicer bar (SC61).
-- 
+  
 13. **Stores Map**
 - Map visual (SC62) inserted to outline store performance, with auto zoom enabled (SC63) and Profit YTD selected as the factor affecting the bubble size (SC64).
 - A tile slicer (SC65) is to be utilised for filtering by country with a multi-select and select-all option (SC66).
