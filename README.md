@@ -140,6 +140,9 @@ For each button:
 - Enable the Action format option, set the type to Page Navigation, and select the destination page (SC76).
 - Copy and group the configured buttons across all report pages (SC77).
 
+#### SQL Queries
+
+
 ## Key Lessons
 - Addressed data inconsistencies and ensured model integrity.
 - Designed user-friendly, interactive dashboards with advanced filtering and drillthrough capabilities.
