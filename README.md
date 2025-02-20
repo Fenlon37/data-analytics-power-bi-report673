@@ -117,7 +117,7 @@ Initially a thin rectangle to reflect the navigation sidebar was added to the le
 - A Drillthrough page is added for store performance analysis and a variety of visuals are added with the gauges accompanying a 20% growth target for the revenue and profit YTD compared to last year (SC68. SC69, SC70, SC71).
 - A tooltips page type was utilised to add a Stores Tooltip gauge, that will be able to be seen for the respective place when selecting the bubble icons on the map (SC72).
 
-#### Power BI Interactions and Navigation Buttons
+14. **Power BI Interactions and Navigation Buttons**
 
 The initial goal is to set Cross-Filtering Interactions.
 - Open the Edit Interactions view in the Format tab of the ribbon on the left side (SC73).
@@ -129,7 +129,7 @@ Total Customers by Country Donut Chart: Enable cross-filtering of the Total Cust
 - Product Detail Page - Orders vs. Profitability scatter graph: Disable filtering for all other visuals.
 Top 10 Products table: Disable filtering for all other visuals.
 
-**Add Navigation Buttons**
+15. **Add Navigation Buttons**
 Use the custom icons collection for the navigation buttons:
 - Default Appearance - Set to white version of the icons.
 - Hover Appearance - Set to cyan version of the icons.
@@ -141,7 +141,7 @@ For each button:
 - Enable the Action format option, set the type to Page Navigation, and select the destination page (SC76).
 - Copy and group the configured buttons across all report pages (SC77).
 
-#### SQL Queries
+16. **SQL Queries**
 - Data is imported from the postgres SQL database (SC78, SC79) so that individual tables featuring different types of data can be displayed (SC80).
 - The Advanced Editor command on ribbon is utilised (SC81) to input SQL commands with the query = Value.NativeQuery (source, {SQL query]) so that language separate from the default in PowerBI can be used (SC82).
 - The list of tables were then printed, followed by the column names and data type for each table (SC83).
