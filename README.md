@@ -87,6 +87,7 @@ The Data Category of the regions was also altered to reflect the contents (SC13)
 
 #### Report pages
 Initially a thin rectangle to reflect the navigation sidebar was added to the left of four report pages of *Executive Summary* *Customer Detail*, *Product Detail* and *Stores Map* (SC14).
+
 10. **Customer Detail**
 - Cards created (SC15), within shapes to show the number of Unique Customers and the Revenue per Customer (SC16, SC17). The *Total Customers* and *Revenue per Customer* measures are dragged into the fields of the selected card. The *Total Customers* title was then renamed to Unique Customers.
 - Two donut charts (SC18) were created to show the customers by country (SC19) and product category (SC20) respectively.
@@ -141,7 +142,11 @@ For each button:
 - Copy and group the configured buttons across all report pages (SC77).
 
 #### SQL Queries
-
+- Data is imported from the postgres SQL database (SC78, SC79) so that individual tables featuring different types of data can be displayed (SC80).
+- The Advanced Editor command on ribbon is utilised (SC81) to input SQL commands with the query = Value.NativeQuery (source, {SQL query]) so that language separate from the default in PowerBI can be used (SC82).
+- The list of tables were then printed, followed by the column names and data type for each table (SC83).
+- SQL database queries then enable patterns and important details to be gleaned from the database (SC84).
+- Please see the 'SQL Table columns'; 'SQL database queries' and 'SQL list of tables' folders for the outputs.
 
 ## Key Lessons
 - Addressed data inconsistencies and ensured model integrity.
