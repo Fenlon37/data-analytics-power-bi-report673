@@ -9,7 +9,7 @@
 6. [License](#license)
 
 ## Objective
-Microsoft Power BI is used for analyzing business data from multiple sources, performing data transformations, and creating an interactive, visually coherent dashboard. The project extracts relevant business outcomes through data modelling, DAX calculations, and the report presentation to guide the future business approach.
+Microsoft Power BI is used for analyzing business data from multiple sources; performing data transformations and creating an interactive, visually coherent dashboard. The project extracts relevant business outcomes through data modelling; DAX calculations and the report presentation to guide the future business approach.
 
 ## Data Sources
 The imported tables within the project arise from the following data sources:
@@ -50,7 +50,7 @@ Created a Full Name column by concatenating *First Name* and *Last Name*.
 Renamed columns for clarity.
 
 5. **Date Table**
-Creation: Generated a continuous date table using DAX, spanning the earliest *Order Date* to the latest *Shipping Date*.
+Creation: Generated a continuous date table using DAX, spanning the earliest *Order Date* to the year end containing the latest *Shipping Date*.
 DAX Columns:
 Day of Week
 Month Number
@@ -86,15 +86,15 @@ Geography Hierarchy (SC12): World Region > Country > Country Region.
 The Data Category of the regions was also altered to reflect the contents (SC13).
 
 #### Report pages
-Initially a thin rectangle to reflect the navigation sidebar was added to the left of four report pages of *Executive Summary* *Customer Detail*, *Product Detail* and *Stores Map* (SC14).
+Initially a thin rectangle to reflect the navigation sidebar spanning the page height was added to the left the four report pages - *Executive Summary* *Customer Detail*, *Product Detail* and *Stores Map* (SC14).
 
 10. **Customer Detail**
 - Cards created (SC15), within shapes to show the number of Unique Customers and the Revenue per Customer (SC16, SC17). The *Total Customers* and *Revenue per Customer* measures are dragged into the fields of the selected card. The *Total Customers* title was then renamed to Unique Customers.
 - Two donut charts (SC18) were created to show the customers by country (SC19) and product category (SC20) respectively.
 - A line chart was created (SC21) outlining the number of unique customers across time with drill-down enabled to evaluate across the date hierarchy (Excluding Start of Week). Additionally a 10 year projection (SC22) and a trend line (SC23, SC24) was added to the chart.
-- A table outlines the top 20 customers by revenue (SC25) with conditional formatting used for determining the colour gradient of the data bars (SC26, SC27).
-- Cards added for the top customer name (SC28); their total orders; and the total revenue obtained from them (SC29).
-- Slicers added to enable manipulation of the dates (SC30, SC31).
+- A table outlining the top 20 customers by revenue (SC25) was added, with conditional formatting used for determining the colour gradient of the data bars (SC26, SC27).
+- Cards were added for the top customer name (SC28); their total orders; and the total revenue obtained from them (SC29).
+- Slicers have been added to enable manipulation of the dates, aiding the analysis of the trends over different time periods (SC30, SC31).
 
 11. **Executive Summary**
 - Cards added within shapes to show the *Total Revenue*, *Total Orders*, and *Total Profit* to an appropriate number of SF (SC32, SC33).
@@ -104,12 +104,13 @@ Initially a thin rectangle to reflect the navigation sidebar was added to the le
 - KPIs created (SC37) to reflect the quarterly change to orders, revenue and profits. The trend axis is coloured according to progress made to current targets (SC38), which were 5% above the previous quarter. The revenue and profits callout value were correct to 1dp (SC39).
 
 12. **Product Detail**
-- Gauges were created to demonstrate the quarterly performance for orders, revenue and profit. Targets were created to be 10% above the current quarter revenue (SC40, SC41) and a Revenue Gap measure was created to find the discrepancy (SC42). The guage was then created (SC43, SC44), with conditional formatting used to alter the text colour depending on the progress to the target (SC45, SC46).
+- Gauges were created to demonstrate the quarterly performance for orders, revenue and profit. Targets were created to be 10% above the current quarter revenue (SC40, SC41) and a Revenue Gap measure was created to find the discrepancy (SC42). The gauge was then created (SC43, SC44), with conditional formatting used to alter the text colour depending on the progress to the target (SC45, SC46).
 - Filter state cards are added to show which if any of the countries (SC47) or categories have been selected for the filter.
 - Area chart added to show revenue trends by product category (SC48, SC49, SC50).
 - Table added to show the top 10 products (SC51).
 - Scatter plot to show the profitability (SC52) and sales volume across each product category (SC53).
-- Slicers added to enable filtering of the selection by product category and country, with a bookmark-enabled toolbar. This was done through the insertion of a custom filter button (SC54, SC55) and the creation of a larger rectangle shape over the navigation pane. Then after altering the selection pane (SC56), a vertical list slicer was created (SC57), and named appropriately (SC58), with multi-select and select-all enabled (SC59). Slicer Bar Closed and Open states have been defined based on whether the slicers were visible or not, with the data being unticked (SC60) and each bookmark state being given an action to open or close the slicer bar (SC61).
+- Slicers added to enable filtering of the selection by product category and country, with a bookmark-enabled toolbar. This was done through the insertion of a custom filter button (SC54, SC55) and the creation of a larger rectangle shape over the navigation pane. Then after altering the selection pane (SC56), a vertical list slicer was created (SC57), and named appropriately (SC58), with multi-select and select-all enabled (SC59).
+- Slicer Bar Closed and Open states have been defined based on whether the slicers were visible or not, with the data being unticked (SC60) and each bookmark state being given an action to open or close the slicer bar (SC61).
   
 13. **Stores Map**
 - Map visual (SC62) inserted to outline store performance, with auto zoom enabled (SC63) and Profit YTD selected as the factor affecting the bubble size (SC64).
