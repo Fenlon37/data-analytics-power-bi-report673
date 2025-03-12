@@ -14,9 +14,9 @@ Microsoft Power BI is used for analyzing business data from multiple sources; pe
 ## Data Sources
 The imported tables within the project arise from the following data sources:
 
-**Orders**: Azure SQL Database - *orders_powerbi table.*
-**Products**: CSV file - *Products.csv.*
-**Stores**: Azure Blob Storage - *Stores table.*
+**Orders**: Azure SQL Database - *orders_powerbi table.*              
+**Products**: CSV file - *Products.csv.*         
+**Stores**: Azure Blob Storage - *Stores table.*          
 **Customers**: Local folder containing three regional CSV files (extracted from *Customers.zip*).
 
 ## Screenshots
@@ -52,12 +52,12 @@ Renamed columns for clarity.
 5. **Date Table**
 Creation: Generated a continuous date table using DAX, spanning the earliest *Order Date* to the year end containing the latest *Shipping Date*.
 DAX Columns:
-Day of Week
-Month Number
-Month Name
-Quarter
-Year
-Start of Year, Start of Quarter, Start of Month, Start of Week
+Day of Week,
+Month Number,
+Month Name,
+Quarter,
+Year,
+Start of Year, Start of Quarter, Start of Month, Start of Week.
 The code for creating the table is outlined within SC4.
 The table was marked as a date table (SC5).
 
