@@ -97,7 +97,7 @@ Initially a thin rectangle to reflect the navigation sidebar spanning the page h
 - Slicers have been added to enable manipulation of the dates, aiding the analysis of the trends over different time periods (SC30, SC31).
 
 11. **Executive Summary**
-- Cards added within shapes to show the *Total Revenue*, *Total Orders*, and *Total Profit* to an appropriate number of SF (SC32, SC33).
+- Cards added within shapes to show the *Total Revenue*, *Total Orders*, and *Total Profit* to an appropriate number of Significant Figures (SC32, SC33).
 - Line chart added to show revenue trends across the date hierarchy (SC34).
 - Bar chart added to show total orders for each product category (SC35, SC36).
 - Two donut charts display the revenue for the business by country and store type respectively).
