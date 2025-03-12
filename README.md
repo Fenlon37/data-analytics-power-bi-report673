@@ -119,7 +119,7 @@ Initially a thin rectangle to reflect the navigation sidebar spanning the page h
 - A tooltips page type was utilised to add a Stores Tooltip gauge, that will be able to be seen for the respective place when selecting the bubble icons on the map (SC72).
 
 14. **Power BI Interactions and Navigation Buttons**
-The initial goal is to set Cross-Filtering Interactions.
+- The initial goal is to set Cross-Filtering Interactions.
 - Open the Edit Interactions view in the Format tab of the ribbon on the left side (SC73).
 Apply the following settings:
 - Executive Summary Page - Product Category bar chart and Top 10 Products table: Disable filtering on card visuals and KPIs (SC75).
@@ -130,7 +130,7 @@ Total Customers by Country Donut Chart: Enable cross-filtering of the Total Cust
 Top 10 Products table: Disable filtering for all other visuals.
 
 15. **Add Navigation Buttons**
-Use the custom icons collection for the navigation buttons:
+- Use the custom icons collection for the navigation buttons:
 - Default Appearance - Set to white version of the icons.
 - Hover Appearance - Set to cyan version of the icons.
 Steps to configure buttons:
