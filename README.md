@@ -86,7 +86,7 @@ Geography Hierarchy (SC12): World Region > Country > Country Region.
 The Data Category of the regions was also altered to reflect the contents (SC13).
 
 #### Report pages
-Initially a thin rectangle to reflect the navigation sidebar spanning the page height was added to the left the four report pages - *Executive Summary* *Customer Detail*, *Product Detail* and *Stores Map* (SC14).
+Initially a thin rectangle to reflect the navigation sidebar spanning the page height was added to the left the four report pages - *Executive Summary*, *Customer Detail*, *Product Detail* and *Stores Map* (SC14).
 
 10. **Customer Detail**
 - Cards created (SC15), within shapes to show the number of Unique Customers and the Revenue per Customer (SC16, SC17). The *Total Customers* and *Revenue per Customer* measures are dragged into the fields of the selected card. The *Total Customers* title was then renamed to Unique Customers.
@@ -104,7 +104,7 @@ Initially a thin rectangle to reflect the navigation sidebar spanning the page h
 - KPIs created (SC37) to reflect the quarterly change to orders, revenue and profits. The trend axis is coloured according to progress made to current targets (SC38), which were 5% above the previous quarter. The revenue and profits callout value were correct to 1dp (SC39).
 
 12. **Product Detail**
-- Gauges were created to demonstrate the quarterly performance for orders, revenue and profit. Targets were created to be 10% above the current quarter revenue (SC40, SC41) and a Revenue Gap measure was created to find the discrepancy (SC42). The gauge was then created (SC43, SC44), with conditional formatting used to alter the text colour depending on the progress to the target (SC45, SC46).
+- Gauges were created to demonstrate the quarterly performance for orders, revenue and profit. Targets were created to be 10% above the current quarter revenue (SC40, SC41) and a Revenue Gap measure was created to find the discrepancy (SC42). Each gauge was created (SC43, SC44), with conditional formatting used to alter the text colour depending on the progress to the target (SC45, SC46).
 - Filter state cards are added to show which if any of the countries (SC47) or categories have been selected for the filter.
 - Area chart added to show revenue trends by product category (SC48, SC49, SC50).
 - Table added to show the top 10 products (SC51).
@@ -119,7 +119,6 @@ Initially a thin rectangle to reflect the navigation sidebar spanning the page h
 - A tooltips page type was utilised to add a Stores Tooltip gauge, that will be able to be seen for the respective place when selecting the bubble icons on the map (SC72).
 
 14. **Power BI Interactions and Navigation Buttons**
-
 The initial goal is to set Cross-Filtering Interactions.
 - Open the Edit Interactions view in the Format tab of the ribbon on the left side (SC73).
 Apply the following settings:
