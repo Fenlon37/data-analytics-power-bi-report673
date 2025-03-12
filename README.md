@@ -24,33 +24,33 @@ Please see screenshots folder for visuals of the data model and report pages. Th
 
 ## Steps Completed
 1. **Orders Table**
-Import: Connect to Azure SQL Database (SC1) using Import mode and database credentials.
-Data Transformation:
+- Import: Connect to Azure SQL Database (SC1) using Import mode and database credentials.
+- Data Transformation:
 Deleted the *Card Number* column to avoid breach of privacy.
 Split *Order Date* and *Shipping Date* columns by space delimeter into date and time components (SC2).
 Filtered out rows with null *Order Date* values.
 Renamed columns following Power BI naming conventions, removing underscores and capitalising words (SC3).
 
 2. **Products Table**
-Import: Imported Products.csv using the Get Data option.
-Data Transformation:
+- Import: Imported Products.csv using the Get Data option.
+- Data Transformation:
 Removed duplicates in the product_code column.
 Renamed columns for clarity.
 
 3. **Stores Table**
-Import: Connected to Azure Blob Storage and imported the Stores table.
-Data Transformation:
+- Import: Connected to Azure Blob Storage and imported the Stores table.
+- Data Transformation:
 Used the Replace Values tool to ensure consistency in the Region column and correct any typos.
 Renamed columns for clarity.
 
 4. **Customers Table**
-Import: Combined and transformed the CSV files using the Folder connector in Power BI.
-Data Transformation:
+- Import: Combined and transformed the CSV files using the Folder connector in Power BI.
+- Data Transformation:
 Created a Full Name column by concatenating *First Name* and *Last Name*.
 Renamed columns for clarity.
 
 5. **Date Table**
-Creation: Generated a continuous date table using DAX, spanning the earliest *Order Date* to the year end containing the latest *Shipping Date*.
+- Creation: Generated a continuous date table using DAX, spanning the earliest *Order Date* to the year end containing the latest *Shipping Date*.
 DAX Columns:
 Day of Week,
 Month Number,
@@ -62,25 +62,25 @@ The code for creating the table is outlined within SC4.
 The table was marked as a date table (SC5).
 
 6. **Data Model**
-Relationships:
+- Relationships:
 Established relationships to form a star schema.
 Ensured one-to-many relationships with single-direction filters towards the orders table from every other table (SC6).
 Confirmed that *Order Date* is the active relationship in the Orders-Date relationship.
 
 7. **Creating calculated column**
-Created a new column (SC7) in the Stores table called Country defined based on the 'Country Code' column (SC8). 
+= Created a new column (SC7) in the Stores table called Country defined based on the 'Country Code' column (SC8). 
 
 8. **Defining initial Measures**
-Created a Measures Table and defined key measures (SC9) such as:
-Total Orders
-Total Revenue
-Total Profit (SC10)
-Total Customers
-Profit YTD
+- Created a Measures Table and defined key measures (SC9) such as:
+Total Orders,
+Total Revenue,
+Total Profit (SC10),
+Total Customers,
+Profit YTD,
 Revenue YTD
 
 9. **Hierarchies**
-Created hierarchies for date and geography (SC11)
+- Created hierarchies for date and geography (SC11)
 Date Hierarchy: Start of Year > Start of Quarter > Start of Month > Start of Week.
 Geography Hierarchy (SC12): World Region > Country > Country Region.
 The Data Category of the regions was also altered to reflect the contents (SC13).
