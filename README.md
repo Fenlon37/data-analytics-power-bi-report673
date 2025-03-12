@@ -68,7 +68,7 @@ Ensured one-to-many relationships with single-direction filters towards the orde
 Confirmed that *Order Date* is the active relationship in the Orders-Date relationship.
 
 7. **Creating calculated column**
-= Created a new column (SC7) in the Stores table called Country defined based on the 'Country Code' column (SC8). 
+- Created a new column (SC7) in the Stores table called Country defined based on the 'Country Code' column (SC8). 
 
 8. **Defining initial Measures**
 - Created a Measures Table and defined key measures (SC9) such as:
