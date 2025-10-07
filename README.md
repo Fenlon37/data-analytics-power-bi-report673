@@ -1,156 +1,150 @@
-# PowerBI Data Analytics Project
+# Power BI Sales Analytics Dashboard
+
+## Overview
+This project demonstrates comprehensive business intelligence capabilities using Microsoft Power BI. It combines data from multiple sources to create an interactive dashboard that analyzes sales performance, customer behavior, and product profitability across different regions and time periods.
+
+### Key Features:
+
+- Multi-source data integration (Azure SQL, CSV files, Blob Storage)
+- Interactive visualizations with drill-down capabilities
+- Advanced DAX calculations for business metrics
+- Star schema data modeling
+- Custom navigation and filtering
 
 ## Table of Contents
-1. [Objective](#objective)
-2. [Data Sources](#data-sources)
-3. [Screenshots](#screenshots)
-4. [Steps Completed](#steps-completed)
-5. [Key Lessons](#key-lessons)
+1. [Data Sources](#data-sources)
+2. [Dashboard Pages](#dashboard-pages) 
+3. [Technical Implementation](#technical-implementation)
+4. [Key Insights Available](#key-insights-available)
+5. [Screenshots](#screenshots)
 6. [License](#license)
 
-## Objective
-Microsoft Power BI is used for analyzing business data from multiple sources; performing data transformations and creating an interactive, visually coherent dashboard. The project extracts relevant business outcomes through data modelling; DAX calculations and the report presentation to guide the future business approach.
-
 ## Data Sources
-The imported tables within the project arise from the following data sources:
+The dashboard integrates data from four primary sources:
 
-**Orders**: Azure SQL Database - *orders_powerbi table.*              
-**Products**: CSV file - *Products.csv.*         
-**Stores**: Azure Blob Storage - *Stores table.*          
-**Customers**: Local folder containing three regional CSV files (extracted from *Customers.zip*).
+| Data Type | Source | Details |
+|-----------|--------|---------|
+| **Orders** | Azure SQL Database | Transaction records from `orders_powerbi` table |
+| **Products** | CSV File | Product catalog from `Products.csv` |
+| **Stores** | Azure Blob Storage | Store location and regional information |
+| **Customers** | Local CSV Files | Regional customer data (extracted from `Customers.zip`) |
+
+## Dashboard Pages
+
+### 1. Executive Summary
+The main overview page providing high-level business metrics at a glance.
+
+**Key Visuals:**
+- Total Revenue, Orders, and Profit cards
+- Revenue trends over time (line chart)
+- Orders by product category (bar chart)
+- Revenue breakdown by country and store type (donut charts)
+- Quarterly KPIs showing performance against 5% growth targets
+
+### 2. Customer Detail
+Deep dive into customer demographics and purchasing patterns.
+
+**Key Visuals:**
+- Unique customer count and revenue per customer metrics
+- Customer distribution by country and product preference
+- Customer growth trends with 10-year forecasting
+- Top 20 customers by revenue (with conditional formatting)
+- Top customer spotlight showing highest spender details
+- Date range slicers for trend analysis
+
+### 3. Product Detail
+Comprehensive product performance analysis with advanced filtering.
+
+**Key Visuals:**
+- Quarterly performance gauges (Orders, Revenue, Profit) with 10% growth targets
+- Revenue trends by product category (area chart)
+- Top 10 products table
+- Profitability vs. sales volume scatter plot
+- Interactive filter toolbar for category and country selection
+
+### 4. Stores Map
+Geographic visualization of store performance across regions.
+
+**Key Visuals:**
+- Interactive map with bubble sizes representing Profit YTD
+- Country filter with tile slicer
+- Drill-through functionality to detailed store performance page
+- Custom tooltips showing store-specific metrics
+- Store performance gauges comparing to 20% YoY growth targets
+
+## Technical Implementation
+
+### Data Preparation
+1. **Data Cleaning:** Removed sensitive information (credit card numbers), handled null values, and eliminated duplicates
+2. **Transformation:** Standardized column names, split date/time columns, created calculated fields (e.g., Full Name from First Name + Last Name)
+3. **Consistency:** Corrected regional naming inconsistencies across datasets
+
+### Data Modeling
+- **Schema:** Star schema design with Orders as the fact table
+- **Relationships:** One-to-many relationships from dimension tables to Orders
+- **Date Table:** Custom DAX-generated continuous date table with hierarchies
+- **Calculated Columns:** Added derived fields like Country (from Country Code)
+
+### Key Measures (DAX)
+A dedicated Measures Table contains calculations including:
+- Total Orders, Total Revenue, Total Profit
+- Total Customers, Revenue per Customer
+- Year-to-Date metrics (Profit YTD, Revenue YTD)
+- Gap analysis measures for target tracking
+
+### Hierarchies
+Two main hierarchies enable intuitive drill-down analysis:
+- **Date Hierarchy:** Year → Quarter → Month → Week
+- **Geography Hierarchy:** World Region → Country → Country Region
+
+### Advanced Features
+- **Cross-filtering:** Customized interactions between visuals to prevent unwanted filtering
+- **Bookmarks:** Created for toggling filter panel visibility
+- **Navigation:** Custom icon buttons with hover effects for seamless page transitions
+- **Conditional Formatting:** Dynamic color coding based on performance thresholds
+- **Drill-through Pages:** Detailed store analysis accessible from map visual
+- **Tooltips:** Custom hover information for enhanced data exploration
+
+## Key Insights Available
+
+Users can answer questions such as:
+- What are our quarterly revenue trends and are we meeting growth targets?
+- Which product categories drive the most orders and profit?
+- Who are our most valuable customers and where are they located?
+- How is customer growth trending over time?
+- Which stores are underperforming or exceeding expectations?
+- What's the relationship between product sales volume and profitability?
+- How does performance vary by region and country?
 
 ## Screenshots
-Please see screenshots folder for visuals of the data model and report pages. The steps of the project outlined below will be accompanied by corresponding screenshots (SC) from that folder.
 
-## Steps Completed
-1. **Orders Table**
-- Import: Connect to Azure SQL Database (SC1) using Import mode and database credentials.
-- Data Transformation:
-Deleted the *Card Number* column to avoid breach of privacy.
-Split *Order Date* and *Shipping Date* columns by space delimeter into date and time components (SC2).
-Filtered out rows with null *Order Date* values.
-Renamed columns following Power BI naming conventions, removing underscores and capitalising words (SC3).
+Visual documentation of the project is available in the `screenshots` folder, including:
+- Data model relationships
+- All four report pages
+- Data transformation steps
+- DAX measure definitions
+- Interactive features and navigation
 
-2. **Products Table**
-- Import: Imported Products.csv using the Get Data option.
-- Data Transformation:
-Removed duplicates in the product_code column.
-Renamed columns for clarity.
+A separate document outlines the steps taken to complete the project and references specific screenshots.
 
-3. **Stores Table**
-- Import: Connected to Azure Blob Storage and imported the Stores table.
-- Data Transformation:
-Used the Replace Values tool to ensure consistency in the Region column and correct any typos.
-Renamed columns for clarity.
+## SQL Integration
 
-4. **Customers Table**
-- Import: Combined and transformed the CSV files using the Folder connector in Power BI.
-- Data Transformation:
-Created a Full Name column by concatenating *First Name* and *Last Name*.
-Renamed columns for clarity.
+The project includes SQL database connectivity demonstrating:
+- Direct query capabilities using `Value.NativeQuery`
+- Table structure analysis (columns, data types)
+- Custom SQL queries for pattern identification
+- Output files in dedicated SQL folders
 
-5. **Date Table**
-- Creation: Generated a continuous date table using DAX, spanning the earliest *Order Date* to the year end containing the latest *Shipping Date*.
-DAX Columns:
-Day of Week,
-Month Number,
-Month Name,
-Quarter,
-Year,
-Start of Year, Start of Quarter, Start of Month, Start of Week.
-The code for creating the table is outlined within SC4.
-The table was marked as a date table (SC5).
+## What I Learned
 
-6. **Data Model**
-- Relationships:
-Established relationships to form a star schema.
-Ensured one-to-many relationships with single-direction filters towards the orders table from every other table (SC6).
-Confirmed that *Order Date* is the active relationship in the Orders-Date relationship.
-
-7. **Creating calculated column**
-- Created a new column (SC7) in the Stores table called Country defined based on the 'Country Code' column (SC8). 
-
-8. **Defining initial Measures**
-- Created a Measures Table and defined key measures (SC9) such as:
-Total Orders,
-Total Revenue,
-Total Profit (SC10),
-Total Customers,
-Profit YTD,
-Revenue YTD
-
-9. **Hierarchies**
-- Created hierarchies for date and geography (SC11)
-Date Hierarchy: Start of Year > Start of Quarter > Start of Month > Start of Week.
-Geography Hierarchy (SC12): World Region > Country > Country Region.
-The Data Category of the regions was also altered to reflect the contents (SC13).
-
-#### Report pages
-Initially a thin rectangle to reflect the navigation sidebar spanning the page height was added to the left the four report pages - *Executive Summary*, *Customer Detail*, *Product Detail* and *Stores Map* (SC14).
-
-10. **Customer Detail**
-- Cards created (SC15), within shapes to show the number of Unique Customers and the Revenue per Customer (SC16, SC17). The *Total Customers* and *Revenue per Customer* measures are dragged into the fields of the selected card. The *Total Customers* title was then renamed to Unique Customers.
-- Two donut charts (SC18) were created to show the customers by country (SC19) and product category (SC20) respectively.
-- A line chart was created (SC21) outlining the number of unique customers across time with drill-down enabled to evaluate across the date hierarchy (Excluding Start of Week). Additionally a 10 year projection (SC22) and a trend line (SC23, SC24) was added to the chart.
-- A table outlining the top 20 customers by revenue (SC25) was added, with conditional formatting used for determining the colour gradient of the data bars (SC26, SC27).
-- Cards were added for the top customer name (SC28); their total orders; and the total revenue obtained from them (SC29).
-- Slicers have been added to enable manipulation of the dates, aiding the analysis of the trends over different time periods (SC30, SC31).
-
-11. **Executive Summary**
-- Cards added within shapes to show the *Total Revenue*, *Total Orders*, and *Total Profit* to an appropriate number of Significant Figures (SC32, SC33).
-- Line chart added to show revenue trends across the date hierarchy (SC34).
-- Bar chart added to show total orders for each product category (SC35, SC36).
-- Two donut charts display the revenue for the business by country and store type respectively).
-- KPIs created (SC37) to reflect the quarterly change to orders, revenue and profits. The trend axis is coloured according to progress made to current targets (SC38), which were 5% above the previous quarter. The revenue and profits callout value were correct to 1dp (SC39).
-
-12. **Product Detail**
-- Gauges were created to demonstrate the quarterly performance for orders, revenue and profit. Targets were created to be 10% above the current quarter revenue (SC40, SC41) and a Revenue Gap measure was created to find the discrepancy (SC42). Each gauge was created (SC43, SC44), with conditional formatting used to alter the text colour depending on the progress to the target (SC45, SC46).
-- Filter state cards are added to show which if any of the countries (SC47) or categories have been selected for the filter.
-- Area chart added to show revenue trends by product category (SC48, SC49, SC50).
-- Table added to show the top 10 products (SC51).
-- Scatter plot to show the profitability (SC52) and sales volume across each product category (SC53).
-- Slicers added to enable filtering of the selection by product category and country, with a bookmark-enabled toolbar. This was done through the insertion of a custom filter button (SC54, SC55) and the creation of a larger rectangle shape over the navigation pane. Then after altering the selection pane (SC56), a vertical list slicer was created (SC57), and named appropriately (SC58), with multi-select and select-all enabled (SC59).
-- Slicer Bar Closed and Open states have been defined based on whether the slicers were visible or not, with the data being unticked (SC60) and each bookmark state being given an action to open or close the slicer bar (SC61).
-  
-13. **Stores Map**
-- Map visual (SC62) inserted to outline store performance, with auto zoom enabled (SC63) and Profit YTD selected as the factor affecting the bubble size (SC64).
-- A tile slicer (SC65) is to be utilised for filtering by country with a multi-select and select-all option (SC66).
-- A Drillthrough page is added for store performance analysis and a variety of visuals are added with the gauges accompanying a 20% growth target for the revenue and profit YTD compared to last year (SC68. SC69, SC70, SC71).
-- A tooltips page type was utilised to add a Stores Tooltip gauge, that will be able to be seen for the respective place when selecting the bubble icons on the map (SC72).
-
-14. **Power BI Interactions and Navigation Buttons**
-- The initial goal is to set Cross-Filtering Interactions.
-- Open the Edit Interactions view in the Format tab of the ribbon on the left side (SC73).
-Apply the following settings:
-- Executive Summary Page - Product Category bar chart and Top 10 Products table: Disable filtering on card visuals and KPIs (SC75).
-- Customer Detail Page - Top 20 Customers table: Disable filtering for all other visuals.
-Total Customers by Product Category Donut Chart: Disable filtering on the Customers line graph.
-Total Customers by Country Donut Chart: Enable cross-filtering of the Total Customers by Product Category Donut Chart.
-- Product Detail Page - Orders vs. Profitability scatter graph: Disable filtering for all other visuals.
-Top 10 Products table: Disable filtering for all other visuals.
-
-15. **Add Navigation Buttons**
-- Use the custom icons collection for the navigation buttons:
-- Default Appearance - Set to white version of the icons.
-- Hover Appearance - Set to cyan version of the icons.
-Steps to configure buttons:
-- On the Executive Summary Page, add four blank buttons to the sidebar.
-For each button:
-- Default Settings: Apply white icon representing each report page.
-- On Hover Settings: Apply cyan icon representing each report page.
-- Enable the Action format option, set the type to Page Navigation, and select the destination page (SC76).
-- Copy and group the configured buttons across all report pages (SC77).
-
-16. **SQL Queries**
-- Data is imported from the postgres SQL database (SC78, SC79) so that individual tables featuring different types of data can be displayed (SC80).
-- The Advanced Editor command on ribbon is utilised (SC81) to input SQL commands with the query = Value.NativeQuery (source, {SQL query]) so that language separate from the default in PowerBI can be used (SC82).
-- The list of tables were then printed, followed by the column names and data type for each table (SC83).
-- SQL database queries then enable patterns and important details to be gleaned from the database (SC84).
-- Please see the 'SQL Table columns'; 'SQL database queries' and 'SQL list of tables' folders for the outputs.
-
-## Key Lessons
-- Addressed data inconsistencies and ensured model integrity.
-- Designed user-friendly, interactive dashboards with advanced filtering and drillthrough capabilities.
+Through this project, I gained experience with:
+- **Data Integration:** Connecting and combining multiple data sources with different formats
+- **Data Quality:** Identifying and resolving inconsistencies to ensure reliable analysis
+- **User Experience:** Designing intuitive navigation and interactive filtering for non-technical users
+- **Performance:** Optimizing data models and relationships for responsive dashboards
+- **Advanced Features:** Implementing bookmarks, drill-through, and custom tooltips
+- **Business Intelligence:** Translating data into actionable insights through effective visualization
 
 ## License
+
 This project is licensed under the MIT License. See the LICENSE file for more details.
