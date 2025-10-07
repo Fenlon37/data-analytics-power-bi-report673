@@ -1,5 +1,8 @@
 # Power BI Sales Dashboard - Step-by-Step Implementation Guide
 
+> **New to this project?** Start with the [README](README.md) for an overview of what this dashboard does and the insights it provides.
+
+This guide focuses on the technical implementation steps.
 This document provides instructions for recreating the Power BI sales analytics dashboard from scratch. Follow these steps in order to ensure proper data integration and functionality.
 
 ---
